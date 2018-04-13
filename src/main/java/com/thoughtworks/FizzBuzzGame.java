@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class FizzBuzzGame {
-    private List<String> results = new ArrayList<>();
+    private int count;
     private int specialNum1;
     private int specialNum2;
     private int specialNum3;
@@ -20,10 +20,16 @@ public class FizzBuzzGame {
     }
 
     public void start(int count) {
-
+        this.count=count;
+        int[] specialNums=new int[]{3,5,7};
+        setSpecialNums(specialNums);
     }
 
     public List<String> getResults() {
+        List<String> results = new ArrayList<>();
+        for (int i = 1; i <=count ; i++) {
+            results.add(getResult(i));
+        }
         return results;
     }
 
@@ -48,6 +54,9 @@ public class FizzBuzzGame {
             resultStr+=buzzSlogan;
         if(n%specialNum3==0)
             resultStr+=whizzSlogan;
+
+        if(resultStr.length()==0)
+            return String.valueOf(n);
 
         return resultStr;
     }

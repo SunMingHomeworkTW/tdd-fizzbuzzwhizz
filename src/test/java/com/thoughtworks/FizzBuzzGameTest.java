@@ -68,4 +68,11 @@ public class FizzBuzzGameTest {
         assertEquals(fizzBuzzGame.getResult(53),"Fizz");
         assertEquals(fizzBuzzGame.getResult(73),"Fizz");
     }
+
+    @Test
+    public void should_return_origin_number_when_others(){
+        assertEquals(fizzBuzzGame.getResult(1),"1");
+        assertEquals(fizzBuzzGame.getResult(2),"2");
+        assertEquals(fizzBuzzGame.getResult(4),"4");
+    }
 }
