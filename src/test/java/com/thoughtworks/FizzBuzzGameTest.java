@@ -13,6 +13,7 @@ public class FizzBuzzGameTest {
     public void setUp(){
         specialNums=new int[]{3,5,7};
         fizzBuzzGame=new FizzBuzzGame();
+        fizzBuzzGame.setSpecialNums(specialNums);
     }
 
     @Test
@@ -45,12 +46,11 @@ public class FizzBuzzGameTest {
     @Test
     public void should_return_Fizz_when_is_multiple_of_3_and_7() {
         assertEquals(fizzBuzzGame.getResult(21),"FizzWhizz");
-        assertEquals(fizzBuzzGame.getResult(63),"FizzWhizz");
+        assertEquals(fizzBuzzGame.getResult(42),"FizzWhizz");
     }
 
     @Test
     public void should_return_Fizz_when_is_multiple_of_5_and_7() {
-        assertEquals(fizzBuzzGame.getResult(35),"BuzzWhizz");
         assertEquals(fizzBuzzGame.getResult(175),"BuzzWhizz");
     }
 
