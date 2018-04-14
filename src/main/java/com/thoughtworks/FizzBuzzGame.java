@@ -2,6 +2,7 @@ package com.thoughtworks;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class FizzBuzzGame {
@@ -12,6 +13,20 @@ public class FizzBuzzGame {
     private static final String fizzSlogan="Fizz";
     private static final String buzzSlogan="Buzz";
     private static final String whizzSlogan="Whizz";
+
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+
+        System.out.println("输入学生个数：");
+        FizzBuzzGame game=new FizzBuzzGame();
+        game.start(scanner.nextInt());
+        List<String> results = game.getResults();
+
+        System.out.println("\n报数：");
+        for (String str:results){
+            System.out.println(str);
+        }
+    }
 
     public void setSpecialNums(int[] nums){
         specialNum1=nums[0];
